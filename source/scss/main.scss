@@ -1,0 +1,549 @@
+@import 'smart-grid';
+@import '_normalize';
+@import '_fonts';
+@import 'swiper.min.css';
+
+///---------common styles ----------------------
+
+html {
+	// font-size: 20px;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+img{
+	margin: 0;
+	padding: 0;
+	width: 100%;	
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+body, div, h1, h2, h3, h4, p, input {
+	margin: 0;
+	padding: 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.container {	
+	position: relative;
+  @include wrapper();
+  // border: 1px solid red;
+	// max-width: 1460px;
+	// border: 1px solid red;
+	// overflow: hidden;
+}
+
+.page{
+	position: relative;
+	// max-width: 1920px;
+}
+
+.asideColumn{
+	position: fixed;
+	z-index: 10;
+	width: 185px;
+	height: 100vh;
+	padding: 20px 0 10px 25px;
+	background-color: #fff;
+	border-right: 1px solid #e5e5e5;
+
+	@include to(1023px){
+		display: none;
+	}
+
+	& > p{
+	}
+}
+
+.pageWrap{
+	padding-left: 187px;
+
+	@include to(1023px){
+		padding-left: 0;
+	}
+}
+
+.uniqueizer11221{
+	// max-width: 1920px;
+
+	img{
+		max-width: none;
+	}
+
+	//---header----
+	.header{
+    position: relative;
+    line-height: 1.15;
+    background-color: #373f3e;
+
+    &__bg{
+      display: block;
+      width: 100%;
+      // max-width: 1170px;
+      margin: 0 auto;
+    }
+
+    &__logoBlock{
+      position: absolute;
+      // border: 1px solid white;
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      top: 5%;
+      text-align: center;
+    }
+
+    &__askonaLogo{
+      display: inline-block;
+			vertical-align: middle;		
+			width: 14.55vw;
+			max-width: 280px;
+			transform: translateY(-2px);
+
+			@include sm(width, 18vw);
+			@include xs(width, 20vw);
+			@include xxs(width, 16vw);
+    }
+
+    &__vLine{
+      display: inline-block;
+			vertical-align: middle;
+			background-color: white;
+			width: 2px;
+			height: 2.5vw;
+			max-height: 48px;
+			margin: 0 1.8vw;
+			transform: translateY(-2px);
+
+			@include from(1920px){
+        margin: 0 35px;
+      }
+    }
+
+    &__nectarinLogo{
+      vertical-align: middle;		
+			display: inline-block;
+			width: 10.15vw;
+			max-width: 195px;
+
+			@include sm(width, 13vw);
+			@include xs(width, 15vw);
+			@include xxs(width, 12vw);
+    }
+
+    &__textBlock{
+      margin-top: -8%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+    }
+
+    &__title{
+      text-transform: uppercase;
+      // font-size: 4.5vw;
+      font-size: 86.4px;
+      font-family: Circe-ExtraBold;
+      color: rgb(255, 255, 255);
+      line-height: 1.2;
+      text-align: center;
+      text-shadow: 0px 9px 84px rgba(55, 69, 68, 0.75);
+
+      @include md(font-size, 8vw);
+    }
+
+    &__subtitle{
+      max-width: 950px;
+
+      @include to(980px){
+        max-width: 95%;
+      }
+    }
+}
+
+  .mainTitle{
+    font-family: Circe-ExtraBold, sans-serif;
+    font-size: 3vw;
+    text-align: center;
+    font-size: 72px;
+    color: #ea5172;
+    line-height: 1.15;
+  }
+
+  .mainSubtitle{
+    margin: 5px auto 0 auto;
+    // font-size: .95vw;
+    font-size: 18.24px;
+    font-family: Circe-Regular, sans-serif;
+    color: rgb(255, 255, 255);
+    line-height: 1.6;
+    text-align: center;
+    text-shadow: 0px 7px 117px rgba(55, 69, 68, 0.004);
+    width: 100%;
+
+    @include md(font-size, 2vw);
+    @include sm(font-size, 2.25vw);
+    @include xs(font-size, 2.5vw);
+    @include xxs(font-size, 2.9vw);
+  }
+  
+  //----tasks----
+  .tasks{
+    padding: 40px 0;
+    background-color: #373f3e;
+    line-height: 1.15;
+
+    &__tasks{
+      // border: 1px solid blue;
+      position: relative;
+      margin-top: 50px;
+
+      @include row-flex();
+      justify-content: space-between;
+
+      @include to(1260px){
+        justify-content: center;
+      }
+
+      @include sm-block{
+        justify-content: space-around;
+        margin-top: 10px;
+      }
+      // @include xs(justify-content, space-between);
+    }
+
+    &__item{
+      // border: 1px solid red;
+      position: relative;
+      @include col();
+      @include size(3);
+      min-width: 221px;
+      min-height: 317px;
+      display: flex;
+      justify-content: center;
+
+      @include to(1260px){
+        @include size(5);
+        margin: 30px 0;
+      }
+
+      @include xs-block{
+        @include size(6);
+        min-width: auto;
+        min-height: auto;
+      }
+    }
+  }
+
+  .task{
+    // border: 1px solid yellow;
+    position: relative;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.15;
+
+    background-color: rgb(55, 63, 62);
+    // width: 11.5vw;
+    // height: 16.5vw;
+    width: 221px;
+    height: 317px;
+    border-radius: 10px;
+    
+    box-shadow:
+    rgba(78, 47, 216, 0.11) 0px 0px 2px 0px,
+    #0000005d 4px 4px 8px,
+    #a1a1a13a -4px -4px 8px,
+    inset -5px -20px 20px -10px rgba(16, 16, 14, 0.356);
+
+    @include xs-block{
+      width: 40vw;
+      height: 55vw;
+    }
+
+    &__text{
+      // border: 1px solid yellow;
+      font-family: Circe-Regular, sans-serif;
+      // font-size: 1.25vw;
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.902);
+      line-height: 1.2;
+      text-shadow: 0px 9px 84px rgba(55, 69, 68, 0.07);
+
+      @include xs(font-size, 4.3vw);
+    }
+
+    &__number{
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      font-family: Circe-ExtraBold, sans-serif;
+      font-size: 72px;
+      color: rgb(232, 232, 232);
+      font-weight: bold;
+      text-shadow: 2.828px 2.828px 9.23px rgba(55, 69, 68, 0.17),-3.147px -3.886px 4.68px rgba(255, 255, 255, 0.16);        
+
+      @include xs(font-size, 12vw);
+    }
+  }
+
+  //---decision---
+  .decision{
+    position: relative;
+    background-color: #373f3e;
+    padding: 30px 0 0 0;
+    line-height: 1.15;
+
+    &__subtitle{
+      margin-top: 10px
+    }
+  }
+
+  //----bigSec----
+  .bigSec{
+    position: relative;
+    background-color: #373f3e;
+    margin: 0;
+    padding: 35px 0 0 0;
+    line-height: 1.15;
+
+    &__aboveLine{
+      width: 95%;
+      height: 10px;
+      border-radius: 10px;
+      margin: 0 auto;
+      
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      // rgba(78, 47, 216, 0.11) 0px 0px 2px 0px,
+      #0000005d 4px 4px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(16, 16, 14, 0.336);      
+    }
+
+    &__subtitle{
+      margin-top: 30px;
+    }
+
+    &__deadline{
+      // border: 1px solid blue;
+      position: relative;
+      width: 270px;
+      height: 190px;
+      border-radius: 10px;
+      margin: 45px auto 0 auto;
+      text-align: center;
+      
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      // rgba(78, 47, 216, 0.11) 0px 0px 2px 0px,
+      #0000005d 4px 4px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);      
+    }
+
+    &__innerWrap{
+      // border: 1px solid red;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__info{
+      font-size: 18px;
+      font-family: Circe-Regular, sans-serif;
+      color: rgb(255, 255, 255);      
+    }
+
+    &__date{
+      font-size: 36px;
+      font-family: Circe-ExtraBold, sans-serif;
+      color: rgb(53, 182, 180);      
+      margin-top: 15px;
+      text-transform: uppercase;
+
+      &_2{
+        font-size: 1.5vw;
+        white-space: nowrap;
+        line-height: 1.5;
+
+        @include from(1920px){
+          font-size: 28.8px;
+        }
+      }
+    }
+
+    &__channels{
+      position: relative;
+      width: 33.35vw;
+      height: 12.5vw;
+      max-width: 640px;
+      max-height: 240px;
+      border-radius: 10px;
+      margin: 45px auto 0 auto;
+      text-align: center;
+      
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      // rgba(78, 47, 216, 0.11) 0px 0px 2px 0px,
+      #0000005d 4px 4px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+    }
+
+    &__wrapperSwiper{
+      position: relative;
+			// border: 1px solid red;
+			width: 100%;
+			text-align: center;
+			overflow: hidden;
+		}
+
+		&__swiper-container{
+      border: 1px solid red;
+			position: relative;
+			overflow: hidden;
+			width: 660px;
+			cursor: pointer;
+			margin: 0 auto 0 auto;
+
+			@include to(1150px){
+				width: 70%;
+			}
+		}
+
+		&__swiperItemsContainer{
+			cursor: pointer;
+		}
+
+		&__sliderButtons{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			max-width: 900px;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__chevron{
+			width: 100px;
+			cursor: pointer;
+
+			&:hover{
+				transform: scale(1.2);
+			}
+
+			&:active{
+				transform: scale(1);
+			}
+
+			@include xs-block{
+				width: 15%;
+				cursor: default;
+
+				&:hover{
+					transform: scale(1);
+				}
+
+				&:active{
+					transform: scale(0.8);
+				}
+			}
+		}
+  }
+
+	.member{
+		@include col();
+		@include size(3);
+		@include size-xs(5);
+
+		text-align: center;
+		margin: 30px 0px;
+		line-height: 1.15;
+
+		@include sm-block{
+			margin: 15px 0;
+		}
+
+		@include to(680px){
+			@include size(4);
+		}
+
+		&__photo{
+			width: 100%;
+			max-width: 230px;
+		}
+
+		&__name{
+			font-family: Montserrat-Bold, sans-serif;
+			color: black;
+			font-size: 24px;
+			margin-top: 10px;
+
+			@include to(1200px){
+				font-size: 1.8vw;
+			}
+
+			@include sm-block{
+				font-size: 2vw;
+			}
+
+			@include to(680px){
+				font-size: 2.3vw;
+			}
+
+			@include xs(font-size, 3.5vw);
+			@include xxs(font-size, 4vw);
+		}
+
+		&__position{
+			font-family: Montserrat-Regular, sans-serif;
+			font-size: 18px;
+			margin-top: 8px;
+			color: #808087;
+
+			@include to(1200px){
+				font-size: 1.5vw;
+			}
+
+			@include to(680px){
+				font-size: 1.8vw;
+			}
+			
+			@include xs(font-size, 2.5vw);
+			@include xxs(font-size, 3vw);
+		}
+	}
+}
