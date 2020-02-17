@@ -13,4 +13,14 @@ window.addEventListener('load', () => {
 			prevEl: '.bigSec .container .bigSec__wrapperSwiper .bigSec__sliderButtons .bigSec__chevron_right',
 		}
 	})
+
+	new Swiper('.cardSlider .container .cardSlider__wrapperSwiper .cardSlider__swiper-container', {
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 20,
+		navigation: {
+			nextEl: '.cardSlider .container .cardSlider__wrapperSwiper .cardSlider__sliderButtons .cardSlider__chevron_left',
+			prevEl: '.cardSlider .container .cardSlider__wrapperSwiper .cardSlider__sliderButtons .cardSlider__chevron_right',
+		}
+	})
 })
