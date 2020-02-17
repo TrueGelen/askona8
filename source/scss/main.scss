@@ -364,6 +364,23 @@ body, div, h1, h2, h3, h4, p, input {
       left: -40%;
       width: 60%;
       z-index: 2;
+
+      @include to(1280px){
+        left: -60%;
+        width: 70%;
+      }
+
+      @include lg-block{
+        left: -40%;
+        width: 60%;
+      }
+
+      @include to(1023px){
+        left: -55%;
+        width: 70%;
+      }
+
+      @include xxs(display, none);
     }
 
     &__subtitle{
@@ -373,7 +390,8 @@ body, div, h1, h2, h3, h4, p, input {
     &__deadline{
       // border: 1px solid blue;
       position: relative;
-      width: 270px;
+      width: 100%;
+      max-width: 270px;
       height: 190px;
       border-radius: 10px;
       margin: 45px auto 0 auto;
@@ -409,6 +427,8 @@ body, div, h1, h2, h3, h4, p, input {
       margin-top: 15px;
       text-transform: uppercase;
 
+      @include xs(font-size, 30px);
+
       &_2{
         font-size: 1.5vw;
         white-space: nowrap;
@@ -417,6 +437,15 @@ body, div, h1, h2, h3, h4, p, input {
         @include from(1920px){
           font-size: 28.8px;
         }
+
+        @include to(1280px){
+          font-size: 1.8vw;
+        }
+
+        @include lg(font-size, 2.1vw);
+        @include md(font-size, 2.3vw);
+        @include sm(font-size, 2.7vw);
+        @include xs(font-size, 13px);
       }
     }
 
@@ -436,6 +465,32 @@ body, div, h1, h2, h3, h4, p, input {
       #0000005d 4px 4px 8px,
       #a1a1a144 -4px -4px 6px,
       inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+
+      @include to(1280px){
+        width: 40vw;
+        height: 17vw;
+      }
+
+      @include lg-block{
+        width: 50vw;
+        height: 18vw;
+      }
+
+      @include md-block{
+        width: 55vw;
+        height: 20vw;
+      }
+
+      @include sm-block{
+        width: 60vw;
+        height: 23vw;
+      }
+
+      @include xs-block{
+        width: 100%;
+        max-width: 270px;
+        height: 25vw;
+      }
     }
 
     &__wrapperSwiper{
@@ -480,40 +535,75 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 
 		&__sliderButtons{
+      // border: 1px solid red;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
-			max-width: 900px;
+			max-width: 960px;
 			display: flex;
 			justify-content: space-between;
-		}
+    }
 
 		&__chevron{
-			width: 100px;
-			cursor: pointer;
+			width: 130px;
+      cursor: pointer;
+      fill: #323f3d;
+      stroke-width: 3px;
+      stroke: #a1a1a144;
+      filter: drop-shadow(#00000080 3px 3px 6px) blur(2px);
 
-			&:hover{
-				transform: scale(1.2);
-			}
+      @include to(1200px){
+        width: 12%;
+      }
 
-			&:active{
-				transform: scale(1);
-			}
+      &_right{
 
-			@include xs-block{
-				width: 15%;
-				cursor: default;
+        &:hover{
+          transform: scale(1.2);
+        }
 
-				&:hover{
-					transform: scale(1);
-				}
+        &:active{
+          transform: scale(1);
+        }
 
-				&:active{
-					transform: scale(0.8);
-				}
-			}
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(1);
+          }
+  
+          &:active{
+            transform: scale(0.8);
+          }
+        }
+      }
+      
+      &_left{
+        transform: scale(-1, 1);
+
+        &:hover{
+          transform: scale(-1.2, 1.2);
+        }
+
+        &:active{
+          transform: scale(-1, 1);
+        }
+
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(-1, 1);
+          }
+  
+          &:active{
+            transform: scale(-0.8, 0.8);
+          }
+        }
+      }
 		}
   }
 
@@ -682,6 +772,8 @@ body, div, h1, h2, h3, h4, p, input {
     line-height: 1.15;
     background-color: #373f3e;
 
+    @include sm(padding, 50px 0 0 0);
+
     &__border{
       position: relative;
       border-radius: 15px;
@@ -741,8 +833,12 @@ body, div, h1, h2, h3, h4, p, input {
   .cardSlider{
     position: relative;
     line-height: 1.15;
-    padding: 40px 0;
+    padding: 40px 0 0 0;
     background-color: #373f3e;
+
+    @include sm(padding, 30px 0 0 0);
+
+    @include xs(overflow, hidden);
 
     &__wrapperSwiper{
       position: relative;
@@ -750,7 +846,7 @@ body, div, h1, h2, h3, h4, p, input {
 			width: 100%;
 			text-align: center;
       // overflow: hidden;
-      margin-top: 50px;
+      // margin-top: 50px;
 		}
 
 		&__swiper-container{
@@ -853,69 +949,444 @@ body, div, h1, h2, h3, h4, p, input {
     }
 
 		&__sliderButtons{
+      // border: 1px solid red;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
-			max-width: 900px;
+			max-width: 1050px;
 			display: flex;
 			justify-content: space-between;
-		}
+    }
 
 		&__chevron{
-			width: 100px;
-			cursor: pointer;
+			width: 130px;
+      cursor: pointer;
+      fill: #323f3d;
+      stroke-width: 3px;
+      stroke: #a1a1a144;
+      filter: drop-shadow(#00000080 3px 3px 6px) blur(2px);
 
-			&:hover{
-				transform: scale(1.2);
-			}
+      @include to(1200px){
+        width: 12%;
+      }
 
-			&:active{
-				transform: scale(1);
-			}
+      &_right{
 
-			@include xs-block{
-				width: 15%;
-				cursor: default;
+        &:hover{
+          transform: scale(1.2);
+        }
 
-				&:hover{
-					transform: scale(1);
-				}
+        &:active{
+          transform: scale(1);
+        }
 
-				&:active{
-					transform: scale(0.8);
-				}
-			}
-		}
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(1);
+          }
+  
+          &:active{
+            transform: scale(0.8);
+          }
+        }
+      }
+      
+      &_left{
+        transform: scale(-1, 1);
+
+        &:hover{
+          transform: scale(-1.2, 1.2);
+        }
+
+        &:active{
+          transform: scale(-1, 1);
+        }
+
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(-1, 1);
+          }
+  
+          &:active{
+            transform: scale(-0.8, 0.8);
+          }
+        }
+      }
+    }
+
+    &__GnativeSlider{
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .GnativeCarousel{
+    position: relative;
+    // border: 10px solid black;
+    width: 100%;
+    z-index: 2;
+
+    &__itemsContainer{
+      // border: 1px solid white;
+
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      // width: 80%;
+      // max-width: 720px;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__slide{
+      opacity: 1;
+      position: absolute;
+      border-radius: 15px;
+      max-width: 650px;
+      width: 70%;
+      padding: 25px;
+
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      // rgba(78, 47, 216, 0.11) 0px 0px 2px 0px,
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17); 
+
+      @include xs-block{
+        width: 75%;
+        padding: 15px;
+      }
+
+      @include xs-block{
+        // width: 100%;
+        padding: 10px;
+      }
+
+      & > img{
+        // border: 1px solid red;
+        position: relative;  
+        border-radius: 15px;
+
+        width: 100%;
+        // max-width: 580px;
+        // width: 190px;
+        // height: 190px;
+
+        background-color: rgb(55, 63, 62);
+        box-shadow:
+        #00000067 6px 6px 8px,
+        #a1a1a144 -4px -4px 6px,
+        inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+      }
+    }
+
+    &__buttons{
+      // border: 1px solid red;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 140%;
+			max-width: 1050px;
+			display: flex;
+      justify-content: space-between;
+      z-index: 1;
+
+      @include to(1270px){
+        width: 130%;
+      }
+
+      @include to(1270px){
+        width: 130%;
+      }
+
+      @include to(1023px){
+        width: 120%;
+      }
+
+      @include xs(display, none);
+    }
+
+		&__chevron{
+			width: 130px;
+      cursor: pointer;
+      fill: #323f3d;
+      stroke-width: 3px;
+      stroke: #a1a1a144;
+      filter: drop-shadow(#00000080 3px 3px 6px) blur(2px);
+
+      @include to(1200px){
+        width: 12%;
+      }
+
+      &_right{
+
+        &:hover{
+          transform: scale(1.2);
+        }
+
+        &:active{
+          transform: scale(1);
+        }
+
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(1);
+          }
+  
+          &:active{
+            transform: scale(0.8);
+          }
+        }
+      }
+      
+      &_left{
+        transform: scale(-1, 1);
+
+        &:hover{
+          transform: scale(-1.2, 1.2);
+        }
+
+        &:active{
+          transform: scale(-1, 1);
+        }
+
+        @include xs-block{
+          cursor: default;
+  
+          &:hover{
+            transform: scale(-1, 1);
+          }
+  
+          &:active{
+            transform: scale(-0.8, 0.8);
+          }
+        }
+      }
+    }
+  }
+
+  //----comment---
+  .comment{
+    position: relative;
+    line-height: 1.15;
+    padding: 55px 0 0 0;
+    background-color: #373f3e;
+
+    @include sm(padding, 30px 0 0 0);
+
+    &__title{
+
+
+      @include to(1365px){
+        font-size: 60px;
+      }
+
+      @include sm(font-size, 8vw);
+    }
+
+    &__subtitle{
+      font-family: Circe-ExtraBold, sans-serif;
+      color: white;
+      font-size: 18px;
+      white-space: nowrap;
+      // max-width: 45.5%;
+      margin: 0 auto;
+      line-height: 1.4;
+      text-align: center;
+
+      @include to(1365px){
+        font-size: 16px;
+        text-align: center;
+      }
+
+      @include sm(font-size, 14px);
+      @include xs(font-size, 12px);
+      @include xxs(font-size, 11px);
+    } 
+
+    &__photoBorder{
+      position: relative;
+      z-index: 2;
+      margin: 0 auto;
+      width: 44%;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+      
+
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+
+      @include xs(padding, 10px);
+    }
+
+    &__photo{
+      border-radius: 15px;
+      padding: 1px;
+      // opacity: 0.1;
+      // width: ;
+
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17); 
+    }
+
+    &__comment{
+      position: relative;
+      z-index: 1;
+      font-family: Circe-Regular, sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+      color: white;
+      border-radius: 15px;
+      // padding: 30px 90px;
+      padding: 4% 8.5%;
+      max-width: 74%;
+      margin: 0 auto;
+      transform: translateY(-12%);
+
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+
+      @include to(1365px){
+        font-size: 16px;
+        transform: translateY(-5%);
+        padding: 4% 6%;
+      }
+
+      @include sm-block{
+        padding: 15px;
+        transform: translateY(0%);
+        font-size: 14px;
+      }
+
+      @include xs(line-height, 1.3);
+
+      & > span {
+        color: #35b6b4;
+      }
+    }
+  }
+
+  //----team----
+  .team{
+    position: relative;
+    line-height: 1.15;
+    padding: 15px 0 0 0;
+    background-color: #373f3e;
+    // margin-bottom: ;
+
+    @include sm(padding, 30px 0 0 0);
+
+    &__title{
+
+      @include xs(font-size, 10vw);
+    }
+
+    &__members{
+      @include row-flex();
+      // border: 1px solid orange;
+      justify-content: space-around;
+
+      @include sm(justify-content, space-between);
+      // @include xxs(justify-content, space-around);
+    }
+
+    &__item{
+      @include col();
+      @include size(3);
+      @include size-sm(3.5);
+      @include size-xxs(5.5);
+      // @include size-xs(5);
+      // border: 1px solid blue;
+
+      
+      text-align: center;
+      margin-top: 30px;
+      
+      // @include sm(margin, 20px 10px);
+    }
+  }
+
+  //---footer---
+  .footer{
+    position: relative;
+    line-height: 1.15;
+    // padding: 50px 0 0 0;
+    background-color: #373f3e;
+
+    &__img{
+      // border: 1px solid red;
+      width: 100%;
+      // mix-blend-mode: lighten ;
+    }
   }
 
 	.member{
-		@include col();
-		@include size(3);
-		@include size-xs(5);
-
+    display: inline-block;
 		text-align: center;
-		margin: 30px 0px;
-		line-height: 1.15;
+    line-height: 1.15;
+    // padding: 10px;
+    width: 100%;
+    max-width: 200px;
 
 		@include sm-block{
-			margin: 15px 0;
+			margin-top: 20px;
 		}
 
-		@include to(680px){
+		/* @include to(680px){
 			@include size(4);
-		}
+    } */
+    
+    &__borderPhoto{
+      padding: 7px;
+      border-radius: 15px;
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
+
+      @include xs(padding, 3px);
+    }
 
 		&__photo{
 			width: 100%;
-			max-width: 230px;
+      // max-width: 190px;
+      padding: 1px;
+      
+      border-radius: 15px;
+      background-color: rgb(55, 63, 62);
+      box-shadow:
+      #00000067 6px 6px 8px,
+      #a1a1a144 -4px -4px 6px,
+      inset -5px -5px 5px 0px rgba(55, 69, 68, 0.17);
 		}
 
 		&__name{
-			font-family: Montserrat-Bold, sans-serif;
-			color: black;
-			font-size: 24px;
+			font-family: Circe-Regular, sans-serif;
+			color: white;
+			font-size: 16px;
 			margin-top: 10px;
 
 			@include to(1200px){
@@ -935,10 +1406,10 @@ body, div, h1, h2, h3, h4, p, input {
 		}
 
 		&__position{
-			font-family: Montserrat-Regular, sans-serif;
-			font-size: 18px;
-			margin-top: 8px;
-			color: #808087;
+			font-family: Circe-Regular, sans-serif;
+			font-size: 16px;
+			margin-top: 5px;
+			color: white;
 
 			@include to(1200px){
 				font-size: 1.5vw;

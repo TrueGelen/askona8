@@ -102,8 +102,12 @@
                 </div>
               </div>
               <div class="bigSec__sliderButtons noselect">
-                <img src="img/chevron_left.png" alt="chevron" class="bigSec__chevron bigSec__chevron_left">
-                <img src="img/chevron_right.png" alt="chevron" class=" bigSec__chevron bigSec__chevron_right">
+                <svg class="bigSec__chevron bigSec__chevron_left">
+                  <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                </svg>
+                <svg class=" bigSec__chevron bigSec__chevron_right">
+                  <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                </svg>
               </div>
             </div>
           </div>
@@ -181,14 +185,36 @@
             <div class="sostav__border">
               <img src="img/sostavru.png" alt="sostav" class="sostav__screen">
             </div>
-            <p class="sostav__info">Кейс Askona к 8 марта попал в подборку праздничных креативов <a
+            <p class="sostav__info">Кейс Аскона к 8 марта попал в подборку праздничных креативов <a
                 href="#">sostav.ru</a>
             </p>
           </div>
         </section>
         <section class="cardSlider">
           <div class="container">
-            <div class="cardSlider__wrapperSwiper noselect">
+              <div class="GnativeCarousel cardSlider__GnativeSlider">
+                <div class="GnativeCarousel__staticItem"></div>
+                <div class="GnativeCarousel__itemsContainer">
+                  <div class="GnativeCarousel__slide">
+                      <img src="img/slider2__img1.png" alt="card" class="GnativeCarousel__card">
+                  </div>
+                  <div class="GnativeCarousel__slide">
+                      <img src="img/slider2__img2.png" alt="card" class="GnativeCarousel__card">
+                  </div>
+                  <div class="GnativeCarousel__slide">
+                    <img src="img/slider2__img3.png" alt="card" class="GnativeCarousel__card">
+                </div>
+                </div>
+                <div class="GnativeCarousel__buttons noselect">
+                  <svg class="GnativeCarousel__chevron GnativeCarousel__chevron_left">
+                    <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                  </svg>
+                  <svg class=" GnativeCarousel__chevron GnativeCarousel__chevron_right">
+                    <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                  </svg>
+                </div>
+              </div>
+            <!-- <div class="cardSlider__wrapperSwiper noselect">
               <div class="cardSlider__swiper-container">
                 <div class="swiper-wrapper cardSlider__swiperItemsContainer">
                   <div class="cardSlider__slide swiper-slide">
@@ -210,12 +236,158 @@
                 </div>
               </div>
               <div class="cardSlider__sliderButtons noselect">
-                <img src="img/chevron_left.png" alt="chevron" class="cardSlider__chevron cardSlider__chevron_left">
-                <img src="img/chevron_right.png" alt="chevron" class=" cardSlider__chevron cardSlider__chevron_right">
+                <svg class="cardSlider__chevron cardSlider__chevron_left">
+                  <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                </svg>
+                <svg class=" cardSlider__chevron cardSlider__chevron_right">
+                  <use xlink:href="svgSprite/sprite.svg#arrow__right"></use>
+                </svg>
+              </div>
+            </div> -->
+          </div>
+        </section>
+        <section class="comment">
+          <div class="container">
+            <h2 class="comment__title mainTitle">Комментарий клиента</h2>
+            <p class="comment__subtitle">Руководитель PR-отдела службы операционного маркетинга<br> департамента
+              розничных продаж группы компаний «Аскона»</p>
+            <div class="comment__photoBorder">
+              <img src="img/comment__photo.png" alt="photo" class="comment__photo">
+            </div>
+            <p class="comment__comment">Мы искали креативную идею вирального и очень мягкого продвижения идеи здорового
+              сна в связке с женским праздником. Агентство предложило вариант нестандартного теста и мы согласились.
+              Аудитории тест зашёл сразу, уже в первые часы после публикации мы получили <span>более 2500 прохождений и
+                шеров</span>.
+              Очень классные получились иллюстрации, необычные и выделяющиеся. Спустя неполных два дня количество
+              <span>прохождений уже более 5000</span> и цифры только растут)))</p>
+          </div>
+        </section>
+        <section class="team">
+          <div class="container">
+            <h2 class="team__title mainTitle">Команда проекта</h2>
+            <div class="team__members">
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__mordan.png" alt="mordan" class="member__photo">
+                  </div>
+                    <p class="member__name">Ольга Мордань</p>
+                    <p class="member__position">Клиентский директор</p>
+                  </div>                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__koroleva.png" alt="koroleva" class="member__photo">
+                  </div>
+                    <p class="member__name">Александра Королева</p>
+                    <p class="member__position">Аккаунт менеджер</p>
+                  </div>                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__trunova.png" alt="trunova" class="member__photo">
+                  </div>
+                    <p class="member__name">Елена Трунова</p>
+                    <p class="member__position">Креативный директор</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__pertsov.png" alt="pertsov" class="member__photo">
+                  </div>
+                    <p class="member__name">Дмитрий Перцов</p>
+                    <p class="member__position">Руководитель творческой группы</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__vavilkina.png" alt="vavilkina" class="member__photo">
+                  </div>
+                    <p class="member__name">Евгения Вавилкина</p>
+                    <p class="member__position">Продвижение</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__novichenkov.png" alt="novichenkov" class="member__photo">
+                  </div>
+                    <p class="member__name">Дмитрий Новиченков</p>
+                    <p class="member__position">Дизайнер-иллюстратор</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__neymar.png" alt="neymar" class="member__photo">
+                  </div>
+                    <p class="member__name">Александр Осипов</p>
+                    <p class="member__position">Старший арт-директор</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__seryabryakova.png" alt="seryabryakova" class="member__photo">
+                  </div>
+                    <p class="member__name">Светлана Серебрякова</p>
+                    <p class="member__position">Продвижение</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__kanishev.png" alt="kanishev" class="member__photo">
+                  </div>
+                    <p class="member__name">Увгений Канищев</p>
+                    <p class="member__position">Директор отдела производства</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__komarov.png" alt="komarov" class="member__photo">
+                  </div>
+                    <p class="member__name">Максим Комаров</p>
+                    <p class="member__position">Менеджер проекта</p>
+                  </div>
+                
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__frolova.png" alt="frolova" class="member__photo">
+                  </div>
+                    <p class="member__name">Мария Фролова</p>
+                    <p class="member__position">Аккаунт-менеджер</p>                  
+                </div>
+              </div>
+              <div class="team__item">
+                <div class="member">
+                  <div class="member__borderPhoto">
+                    <img src="img/team__kalinkina.png" alt="kalinkina" class="member__photo">
+                  </div>
+                    <p class="member__name">Светлана Калинкина</p>
+                    <p class="member__position">Модератор отдела SMM</p>                  
+                </div>
               </div>
             </div>
           </div>
         </section>
+        <footer class="footer">
+          <img src="img/footerbg.png" alt="footer" class="footer__img">
+        </footer>
       </div>
     </div>
     <script src="js/build.js"></script>
